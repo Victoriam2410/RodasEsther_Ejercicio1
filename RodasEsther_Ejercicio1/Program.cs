@@ -10,11 +10,36 @@ Console.WriteLine("ingrese el nivel de dolor (0–10) del paciente");
 int dolor = int.Parse(Console.ReadLine());
 Console.WriteLine("ingrese la presión sistólica del paciente");
 int presion = int.Parse(Console.ReadLine());
-if (temperatura >0 &&  presion > 0 && edad > 0 &&  dolor > 0 && oxigeno > 0 && option >=1 && option <=4)
+if (temperatura >0 &&  presion > 0 && edad > 0 &&  dolor >= 0 && dolor <=10 && oxigeno > 0 && option >=1 && option <=4)
 {
     switch (option)
     {
         case 1:
+            if (oxigeno < 90)
+            {
+                Console.WriteLine("El paciente es prioridad 1 (prioridad mayor)");
+            }
+            else if (temperatura>=39 && dolor >=8)
+            {
+                Console.WriteLine("El paciente es prioridad 2 (prioridad media)");
+            }
+            else
+            {
+                Console.WriteLine("El paciente es prioridad 3 (prioridad minima)");
+            }
         break;
+
+        case 2:
+            if (dolor <=3 && temperatura <=38)
+            {
+                Console.WriteLine("Es prioridad minima, consulta programada");
+            }
+            else
+            {
+                Console.WriteLine("Prioridad media y atención en el día");
+            }
+
+            break;
     }
 }
+
