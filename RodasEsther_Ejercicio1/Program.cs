@@ -40,6 +40,34 @@ if (temperatura >0 &&  presion > 0 && edad > 0 &&  dolor >= 0 && dolor <=10 && o
             }
 
             break;
+        case 3:
+            if (edad < 12 && temperatura >= 38.5)
+            {
+                Console.WriteLine("Prioridad mayor y observación pediátrica inmediata");
+            }
+            else
+            {
+                Console.WriteLine("Prioridad media y consulta pediátrica");
+            }
+            break;
+        case 4: 
+            if (dolor >= 7 || presion < 90)
+            {
+                Console.WriteLine("Prioridad mayor y atención traumatológica inmediata");
+            }
+            else
+            {
+                Console.WriteLine("Prioridad media y consulta traumatológica");
+            }
+            break;
+        default:
+            Console.WriteLine("Tipo de atención inválido.");
+            break;
     }
 }
+else
+{
+    Console.WriteLine("Dato invalido");
+}
+
 
